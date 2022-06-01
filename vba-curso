@@ -1,0 +1,9 @@
+Macro para tabela dinamica atualizar sozinha quando eu mudar a formula sem precisar executar a macro 
+
+Private Sub Worksheet_Change(ByVal Target As Range)
+If Target.Column >= 1 And Target.Column <= 3 Then
+If Target.Row >= 1 And Target.Row <= 100 Then
+ActiveSheet.PivotTables("Tabela dinâmica1").PivotCache.Refresh
+End if
+End If
+End Sub
